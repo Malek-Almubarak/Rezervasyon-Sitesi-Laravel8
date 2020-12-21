@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Page Title</title>
-</head>
-<body>
+@extends('layouts.home')
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+@section('title', 'Page Title')
 
-</body>
-</html>
+@section('sidebar')
+    @parent
+
+    <p>This is appended to the master sidebar.</p>
+@endsection
+
+@section('content')
+
+@endsection
