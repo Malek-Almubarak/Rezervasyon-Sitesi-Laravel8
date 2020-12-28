@@ -2,142 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5db4bc77-ce59-48c6-9da4-a46656ce8222" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/_content.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/_footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/READ-ME.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/barber-shop-template.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/about.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/blog-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/blog-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/blog-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/blog-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/blog-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/blog-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/contact.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/hero.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/portfolio-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/portfolio-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/portfolio-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/portfolio-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/portfolio-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/portfolio-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/price-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/service-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/service-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/service-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/single.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/team-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/team-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/team-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/team-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/testimonial-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/testimonial-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/testimonial-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/img/testimonial-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/animate/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/animate/animate.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/easing/easing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/easing/easing.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/isotope/isotope.pkgd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/isotope/isotope.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/lightbox/css/lightbox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/lightbox/css/lightbox.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/lightbox/images/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/lightbox/images/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/lightbox/images/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/lightbox/images/prev.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/lightbox/js/lightbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/lightbox/js/lightbox.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/lightbox/links.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/owlcarousel/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/owlcarousel/assets/ajax-loader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/owlcarousel/assets/owl.carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/owlcarousel/assets/owl.carousel.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/owlcarousel/assets/owl.theme.default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/owlcarousel/assets/owl.theme.default.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/owlcarousel/assets/owl.theme.green.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/owlcarousel/assets/owl.theme.green.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/owlcarousel/assets/owl.video.play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/owlcarousel/owl.carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/lib/owlcarousel/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/mail/contact.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/mail/contact.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/mail/jqBootstrapValidation.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/portfolio.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/price.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/service.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/single.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEMPS/BarberX-master/team.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeConroller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/about-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/aligntright.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/author.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/cta-section-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/hero-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/left-image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/page-header.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/post-img-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/post-img-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/post-img-large-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/post-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/recent-post-img-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/recent-post-img-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/recent-post-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/related-post-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/related-post.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/service-icon-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/service-icon-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/service-icon-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/service-single.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/sticky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/user-pic-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/user-pic-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/user-pic-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/images/user-pic-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/js/back-to-top.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/js/jquery.sticky.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/js/menumaker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/js/menumaker.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/js/slider-carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assts/js/sticky-header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/test.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/HomeController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -336,12 +208,25 @@
       <workItem from="1608046810210" duration="12672000" />
       <workItem from="1608462070173" duration="9958000" />
       <workItem from="1608483089356" duration="12037000" />
-      <workItem from="1608558931741" duration="6330000" />
+      <workItem from="1608558931741" duration="7215000" />
+      <workItem from="1609178252769" duration="6729000" />
     </task>
+    <task id="LOCAL-00001" summary="fix problems in the template">
+      <created>1608570797185</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608570797185</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix problems in the template" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix problems in the template" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

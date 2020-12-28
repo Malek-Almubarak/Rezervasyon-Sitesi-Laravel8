@@ -29,7 +29,7 @@
     <script src="{{ asset('assets/js/menumaker.js') }}"></script>
     <!-- sticky header -->
     <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
-    <script src="{{ asset('assets/js/sticky-header.js') }}"></script></script>
+    <script src="{{ asset('assets/js/sticky-header.js') }}"></script>
     <script src="https://oss.maxcdn.com/{{ asset('assets/respond/1.4.2/respond.min.js ') }}"></script>
     <![endif]-->
 </head>
