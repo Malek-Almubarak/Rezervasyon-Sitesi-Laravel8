@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5db4bc77-ce59-48c6-9da4-a46656ce8222" name="Default Changelist" comment="" />
+    <list default="true" id="5db4bc77-ce59-48c6-9da4-a46656ce8222" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -230,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609186494115</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="admin panel page">
+      <created>1609186655874</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609186655874</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +259,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix problems in the template" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix problems in the template" />
+    <MESSAGE value="admin panel page" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin panel page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -32,7 +32,7 @@
 <body>
 <div id="wrapper">
     @include('admin._header')
-@include('admin.sidebar')
+@include('admin._sidebar')
     @section('content')
     @endsection
 @include('admin._footer')
