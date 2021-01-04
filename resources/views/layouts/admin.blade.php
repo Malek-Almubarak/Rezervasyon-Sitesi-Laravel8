@@ -33,8 +33,7 @@
 <div id="wrapper">
     @include('admin._header')
 @include('admin._sidebar')
-    @section('content')
-    @endsection
+   @include('admin._content')
 @include('admin._footer')
 @yield('footer')
 </body>
