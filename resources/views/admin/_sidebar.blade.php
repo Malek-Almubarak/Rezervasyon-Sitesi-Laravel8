@@ -1,6 +1,14 @@
 <!-- LEFT SIDEBAR -->
+
 <div id="sidebar-nav" class="sidebar">
+    <div class="info">
+        @auth
+            <a href="#" class="d-block">{{Auth::user()->name}}</a>
+            <a href="{{route('admin_logout')}}" class="d-block">Logout</a>
+        @endauth
+    </div>
     <div class="sidebar-scroll">
+
         <nav>
             <ul class="nav">
                 <li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
