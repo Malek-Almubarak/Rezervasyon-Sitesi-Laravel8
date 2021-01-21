@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Add Category')
+@section('title','Add Service')
 
 
 @section('content')
@@ -10,12 +10,12 @@
            <div class="container-fluid">
                <div class="row mb-2">
                    <div class="col-sm-6">
-                       <h3>Add category</h3>
+                       <h3>Add service</h3>
                    </div>
                    <div class="col-sm-6">
                        <ol class="breadcrumb float-sm-right">
                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                           <li class="breadcrumb-item active">Add categoy</li>
+                           <li class="breadcrumb-item active">Add Service</li>
                        </ol>
                    </div>
                </div>
@@ -24,7 +24,7 @@
        <section class="content">
            <div class="card">
                <div class="card-header">
-                   <h3 class="card-title">Add categoy</h3>
+                   <h3 class="card-title">Add Service</h3>
                </div>
                <div class="card-body">
 
@@ -32,13 +32,13 @@
 
                        <!-- /.card-header -->
                        <!-- form start -->
-                       <form role="form" action="{{route('admin_category_create')}}" method="post">
+                       <form role="form" action="{{route('admin_service_store')}}" method="post">
                            @csrf
                            <div class="card-body">
                                <div class="form-group">
                                    <label>Parented</label>
-                                   <select name="parented" style="width: 100%;">
-                                       <option value="0" selected="selected">Main category</option>
+                                   <select name="category_id" style="width: 100%;">
+
                                        @foreach($datalist as $rs)
                                        <option value="{{$rs->id}}" >{{$rs->title}}</option>
                                        @endforeach
@@ -52,11 +52,20 @@
 
                                <div>
                                    <label >Keyword</label>
-                                   <input type="text" name="keyword" class="form-control">
+                                   <input type="text" name="keyword" value="" class="form-control">
                                </div>
                                <div >
                                    <label >Description</label>
-                                   <input type="text" name="description" class="form-control">
+                                   <input type="text" name="description" value=""  class="form-control">
+                               </div>
+
+                               <div >
+                                   <label >Price</label>
+                                   <input type="number" name="price" value="0" class="form-control">
+                               </div>
+                               <div>
+                                   <label >Detail</label>
+                                   <input type="text" name="detail" class="form-control">
                                </div>
                                <div class="form-group">
                                    <label>Status</label>
@@ -74,9 +83,9 @@
                </div>
 
                <div class="card-footer">
-                   <button type="submit" class="btn btn-primary">ADD CATEGORY</button>
+                   <button type="submit" class="btn btn-primary">ADD service</button>
                </div>
-               </form>
+
            </div>
        </section>
    </div>

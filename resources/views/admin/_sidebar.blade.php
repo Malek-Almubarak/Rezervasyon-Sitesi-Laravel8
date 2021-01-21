@@ -23,8 +23,8 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="{{route('admin_category')}}" class="active"> <p>CATEGORY</p></a></li> //v10 24.40
-                <li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
+                <li><a href="{{route('admin_category')}}" class="active"> <p>CATEGORY</p></a></li>
+                <li><a href="{{route('admin_service')}}" class="active"> <p>Service</p></a></li>
                 <li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
                 <li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>
             </ul>
