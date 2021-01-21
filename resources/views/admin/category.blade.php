@@ -24,10 +24,10 @@
        <section class="content">
            <div class="card">
                <div class="card-header">
-                   <h3 class="card-title">category list</h3>
+
+                   <a href="{{route('admin_category_add')}}" type="button" class="btn btn-block btn-primary btn-lg" style="width: 150px">Add category</a>
                </div>
 
-               <h3 class="panel-title">Basic Table</h3>
            </div>
            <div class="panel-body">
                <table class="table">
@@ -51,7 +51,7 @@
                        <td>{{$rs->title}}</td>
                        <td>{{$rs->status}}</td>
                        <td>Edit</td>
-                       <td>Delet</td>
+                       <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Are you sure?you want to delet this')"> Delet</a></td>
                    </tr>
                    </tbody>
                    @endforeach
@@ -85,8 +85,8 @@
                 "searching":false,"ordering":true,
                 "info":true,"autoWidth":false,
                 "responsive":true,
-            )};
-        })''
+
+        })
 
     </script>
 

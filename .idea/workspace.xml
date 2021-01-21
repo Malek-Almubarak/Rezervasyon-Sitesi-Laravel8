@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5db4bc77-ce59-48c6-9da4-a46656ce8222" name="Default Changelist" comment="login sayfasi">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/_blank.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/category.blade.php" afterDir="false" />
+    <list default="true" id="5db4bc77-ce59-48c6-9da4-a46656ce8222" name="Default Changelist" comment="Laravel Category Database İşlemleri Model Migration Route Controller List">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category_add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,7 +220,7 @@
       <workItem from="1610939315114" duration="6037000" />
       <workItem from="1611085355834" duration="5779000" />
       <workItem from="1611116609770" duration="16803000" />
-      <workItem from="1611195769658" duration="5299000" />
+      <workItem from="1611195769658" duration="17810000" />
     </task>
     <task id="LOCAL-00001" summary="fix problems in the template">
       <created>1608570797185</created>
@@ -304,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610313207677</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Laravel Category Database İşlemleri Model Migration Route Controller List">
+      <created>1611201379688</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1611201379688</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +328,8 @@
     <MESSAGE value="fix problems in the template" />
     <MESSAGE value="admin panel page" />
     <MESSAGE value="login sayfasi" />
-    <option name="LAST_COMMIT_MESSAGE" value="login sayfasi" />
+    <MESSAGE value="Laravel Category Database İşlemleri Model Migration Route Controller List" />
+    <option name="LAST_COMMIT_MESSAGE" value="Laravel Category Database İşlemleri Model Migration Route Controller List" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
