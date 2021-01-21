@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
 
+
       public function index()
     {
        return view('home.index');
+
     }
 
      public function login()
@@ -34,6 +36,7 @@ class HomeController extends Controller
             return view('admin.login');
         }
     }
+
 
      public function logout(Request $request)
     {

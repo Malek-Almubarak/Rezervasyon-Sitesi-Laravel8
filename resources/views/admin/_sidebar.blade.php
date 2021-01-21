@@ -2,10 +2,7 @@
 
 <div id="sidebar-nav" class="sidebar">
     <div class="info">
-        @auth
-            <a href="#" class="d-block">{{Auth::user()->name}}</a>
-            <a href="{{route('admin_logout')}}" class="d-block">Logout</a>
-        @endauth
+
     </div>
     <div class="sidebar-scroll">
 
@@ -26,6 +23,7 @@
                         </ul>
                     </div>
                 </li>
+                <li><a href="{{route('admin_category')}}" class="active"> <p>CATEGORY</p></a></li> //v10 24.40
                 <li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
                 <li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
                 <li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>
@@ -33,5 +31,3 @@
         </nav>
     </div>
 </div>
-<!-- END LEFT SIDEBAR -->
-
