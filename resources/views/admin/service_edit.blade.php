@@ -34,7 +34,7 @@
                        <!-- form start -->
                        <form role="form" action="{{route('admin_service_update',['id'=>$data->id])}}" method="post">
                            @csrf
-                           <div class="card-body">
+                           <div class="card-body" STYLE="width: 600Px">
                                <div class="form-group">
                                    <label>Parented</label>
                                    <select name="category_id" style="width: 100%;">
@@ -45,29 +45,31 @@
 
                                    </select>
                                </div>
-                               <div>
+                               <div STYLE="width: 600Px">
                                    <label >Title</label>
-                                   <input type="text" name="title" value="{{$data->title}} class="form-control"  >
+                                   <input type="text" name="title" value="{{$data->title}} class="form-control">
                                </div>
 
-                               <div>
+                               <div STYLE="width: 600Px">
                                    <label >Keyword</label>
                                    <input type="text" name="keyword" value="{{$data->keyword}}" class="form-control">
                                </div>
-                               <div >
+                               <div STYLE="width: 600Px" >
                                    <label >Description</label>
                                    <input type="text" name="description" value="{{$data->description}}" class="form-control">
                                </div>
 
-                               <div >
+                               <div STYLE="width: 600Px" >
                                    <label >Price</label>
                                    <input type="number" name="price" value="{{$data->price}}" class="form-control">
                                </div>
                                <div>
-                                   <label >Detail</label>
-                                   <input type="text" name="detail" value="{{$data->detail}}"class="form-control">
+                                   <div><label>Detail</label></div>
+
+                                   <textarea  id="details" name="detail" ></textarea>
+
                                </div>
-                               <div class="form-group">
+                               <div class="form-group" style="width: 100px">
                                    <label>Status</label>
                                    <select name="status" style="width: 100%;">
                                        <option selected="selected">{{$data->status}}</option>
@@ -91,10 +93,10 @@
        </section>
    </div>
 
+
+</div>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace( 'details' );
+    </script>
 @endsection
-<script>
-    import Button from "@/Jetstream/Button";
-    export default {
-        components: {Button}
-    }
-</script>

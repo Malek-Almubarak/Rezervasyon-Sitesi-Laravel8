@@ -62,9 +62,11 @@
                 </div>
                 <div class="right">
                     <div class="overlay"></div>
+
                     <div class="content text">
                         <h1 class="heading">wellcom</h1>
                     </div>
+
                 </div>
                 <div class="clearfix"></div>
             </div>

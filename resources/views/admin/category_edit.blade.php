@@ -34,7 +34,7 @@
                            <!-- form start -->
                            <form role="form" action="{{route('admin_category_update',['id'=>$data->id])}}" method="post">
                                @csrf
-                               <div class="card-body">
+                               <div class="card-body" STYLE="width: 600Px">
                                    <div class="form-group">
                                        <label>Parented</label>
                                        <select name="parented" style="width: 100%;">
@@ -43,16 +43,16 @@
                                            @endforeach
                                        </select>
                                    </div>
-                                   <div>
+                                   <div STYLE="width: 600Px">
                                        <label >Title</label>
                                        <input type="text" name="title"  value="{{$data->title}}" class="form-control" >
                                    </div>
 
-                                   <div>
+                                   <div STYLE="width: 600Px">
                                        <label >Keyword</label>
                                        <input type="text" name="keyword" value="{{$data->keyword}}" class="form-control">
                                    </div>
-                                   <div >
+                                   <div STYLE="width: 600Px" >
                                        <label >Description</label>
                                        <input type="text" name="description" value="{{$data->description}}" class="form-control">
                                    </div>
@@ -75,7 +75,7 @@
                    <div class="card-footer">
                        <button type="submit" class="btn btn-primary">Update CATEGORY</button>
                    </div>
-                   </form>
+
                </div>
            </section>
        </div>

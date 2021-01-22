@@ -34,7 +34,7 @@
                        <!-- form start -->
                        <form role="form" action="{{route('admin_category_create')}}" method="post">
                            @csrf
-                           <div class="card-body">
+                           <div class="card-body" STYLE="width: 600Px">
                                <div class="form-group">
                                    <label>Parented</label>
                                    <select name="parented" style="width: 100%;">
@@ -45,16 +45,16 @@
 
                                    </select>
                                </div>
-                               <div>
+                               <div STYLE="width: 600Px">
                                    <label >Title</label>
                                    <input type="text" name="title" class="form-control"  >
                                </div>
 
-                               <div>
+                               <div STYLE="width: 600Px">
                                    <label >Keyword</label>
                                    <input type="text" name="keyword" class="form-control">
                                </div>
-                               <div >
+                               <div STYLE="width: 600Px">
                                    <label >Description</label>
                                    <input type="text" name="description" class="form-control">
                                </div>
