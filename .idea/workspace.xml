@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5db4bc77-ce59-48c6-9da4-a46656ce8222" name="Default Changelist" comment="Laravel Products CRUD Ekleme Listeleme Düzenleme Silme">
-      <change beforePath="$PROJECT_DIR$/.idea/laravel1j.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel1j.iml" afterDir="false" />
+    <list default="true" id="5db4bc77-ce59-48c6-9da4-a46656ce8222" name="Default Changelist" comment="Laravel Product Detail Rich Text Editor Zengin Metin Editorü">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category_add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/category_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/service.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/service_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/service_add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/service_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/service_edit.blade.php" afterDir="false" />
@@ -226,7 +223,7 @@
       <workItem from="1611085355834" duration="5779000" />
       <workItem from="1611116609770" duration="16803000" />
       <workItem from="1611195769658" duration="33926000" />
-      <workItem from="1611317565326" duration="16268000" />
+      <workItem from="1611317565326" duration="21231000" />
     </task>
     <task id="LOCAL-00001" summary="fix problems in the template">
       <created>1608570797185</created>
@@ -326,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611269367264</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Laravel Product Detail Rich Text Editor Zengin Metin Editorü">
+      <created>1611348433182</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1611348433182</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +355,8 @@
     <MESSAGE value="Laravel Category Database İşlemleri Model Migration Route Controller List" />
     <MESSAGE value="Laravel Category Ekleme Silme" />
     <MESSAGE value="Laravel Products CRUD Ekleme Listeleme Düzenleme Silme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Laravel Products CRUD Ekleme Listeleme Düzenleme Silme" />
+    <MESSAGE value="Laravel Product Detail Rich Text Editor Zengin Metin Editorü" />
+    <option name="LAST_COMMIT_MESSAGE" value="Laravel Product Detail Rich Text Editor Zengin Metin Editorü" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

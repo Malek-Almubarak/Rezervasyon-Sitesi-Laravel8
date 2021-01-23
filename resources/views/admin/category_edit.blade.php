@@ -1,10 +1,9 @@
-    @extends('layouts.admin')
+@extends('layouts.admin')
 
-    @section('title','Edit Category')
+@section('title','Edit Category')
 
 
-    @section('content')
-
+@section('content')
         <div style="margin-left: 23%; margin-top: 30px">
            <section class="content-header">
                <div class="container-fluid">
@@ -47,6 +46,7 @@
                                        <label >Title</label>
                                        <input type="text" name="title"  value="{{$data->title}}" class="form-control" >
                                    </div>
+
 
                                    <div STYLE="width: 600Px">
                                        <label >Keyword</label>

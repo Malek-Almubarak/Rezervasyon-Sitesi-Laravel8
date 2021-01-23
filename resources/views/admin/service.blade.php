@@ -50,7 +50,15 @@
                            <td>{{$rs->parented}}</td>
                            <td>{{$rs->title}}</td>
                            <td>{{$rs->price}}</td>
-                           <td>{{$rs->image}}</td>
+
+                           <td> @if($rs->image)
+                                   <img src="{{Storage::url($rs->image)}}" height="30" alt="">
+                                    @endif
+
+
+                           </td>
+
+
                            <td>{{$rs->status}}</td>
                            <td><a href="{{route('admin_service_edit',['id'=>$rs->id])}}">Edit</a></td>
                            <td><a href="{{route('admin_service_delete',['id'=>$rs->id])}}" onclick="return confirm('Are you sure?you want to delet this')"> Delet</a></td>

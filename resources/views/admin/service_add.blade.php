@@ -32,7 +32,7 @@
 
                        <!-- /.card-header -->
                        <!-- form start -->
-                       <form role="form" action="{{route('admin_service_store')}}" method="post">
+                       <form role="form" action="{{route('admin_service_store')}}" method="post" enctype="multipart/form-data">
                            @csrf
                            <div class="card-body" STYLE="width: 600Px">
                                <div class="form-group">
@@ -49,7 +49,6 @@
                                    <label >Title</label>
                                    <input type="text" name="title" class="form-control"  >
                                </div>
-
                                <div STYLE="width: 600PX">
                                    <label >Keyword</label>
                                    <input type="text" name="keyword" value="" class="form-control">
@@ -62,6 +61,10 @@
                                <div STYLE="width: 600PX">
                                    <label>Price</label>
                                    <input type="number" name="price" value="0" class="form-control">
+                               </div>
+                               <div STYLE="width: 600PX">
+                                   <label >Image</label>
+                                   <input type="file" name="image" class="form-control"  >
                                </div>
                                <div>
                                    <div><label>Detail</label></div>

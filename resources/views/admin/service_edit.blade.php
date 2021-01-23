@@ -32,7 +32,7 @@
 
                        <!-- /.card-header -->
                        <!-- form start -->
-                       <form role="form" action="{{route('admin_service_update',['id'=>$data->id])}}" method="post">
+                       <form role="form" action="{{route('admin_service_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                            @csrf
                            <div class="card-body" STYLE="width: 600Px">
                                <div class="form-group">
@@ -47,9 +47,8 @@
                                </div>
                                <div STYLE="width: 600Px">
                                    <label >Title</label>
-                                   <input type="text" name="title" value="{{$data->title}} class="form-control">
+                                   <input type="text" name="title" value="{{$data->title}} class="form-control" >
                                </div>
-
                                <div STYLE="width: 600Px">
                                    <label >Keyword</label>
                                    <input type="text" name="keyword" value="{{$data->keyword}}" class="form-control">
@@ -62,6 +61,13 @@
                                <div STYLE="width: 600Px" >
                                    <label >Price</label>
                                    <input type="number" name="price" value="{{$data->price}}" class="form-control">
+                               </div>
+                               <div STYLE="width: 600Px">
+                                   <label >Image</label>
+                                   <input type="file" name="image"  value="{{$data->image}}"  class="form-control">
+                                   @if($data->image)
+                                       <img src="{{Storage::url($data->image)}}" height="60" alt="">
+                                   @endif
                                </div>
                                <div>
                                    <div><label>Detail</label></div>
@@ -94,9 +100,10 @@
    </div>
 
 
-</div>
+
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
         CKEDITOR.replace( 'details' );
     </script>
+
 @endsection
