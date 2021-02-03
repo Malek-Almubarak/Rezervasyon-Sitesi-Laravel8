@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Faq;
+use App\Models\Image;
 use App\Models\Message;
 use App\Models\Service;
 use App\Models\Setting;
@@ -24,7 +25,7 @@ class HomeController extends Controller
 
     public function index(){
         $setting=Setting::first();
-        $slider=service::select('id','title','image','slug','price','category_id')->limit(4)->get();
+        $slider=service::select('id','title','image','slug','price','category_id')->limit(3)->get();
         $daily=service::select('id','title','image','slug')->limit(6)->inRandomOrder()->get();
         $last=service::select('id','title','image','slug','price')->limit(6)->orderByDesc('id')->get();
         $picked=service::select('id','title','image','slug','price')->limit(6)->inRandomOrder()->get();
@@ -62,6 +63,23 @@ class HomeController extends Controller
     public function contact(){
         $setting=Setting::first();
         return view('home.contact',['setting'=>$setting,'page'=>'home']);
+    }
+    public function service($id,$slug){
+        $setting=Setting::first();
+        $data=service::find($id);
+        $picked=service::select('id','title','image','slug')->limit(6)->inRandomOrder()->get();
+        //$reviews=Review::where('service_id',$id)->get();
+        $datalist=Image::where('service_id',$id)->get();
+        return view('home.service_detail',['setting'=>$setting,'picked'=>$picked,'data'=>$data,'datalist'=>$datalist]);
+
+    }
+    public function categoryservices($id,$slug){
+        $setting=Setting::first();
+        $datalist=service::where('category_id',$id)->get();
+        $data=Category::find($id);
+
+        return view('home.category_services',['data'=>$data,'datalist'=>$datalist,'setting'=>$setting]);
+
     }
 
     public function references(){

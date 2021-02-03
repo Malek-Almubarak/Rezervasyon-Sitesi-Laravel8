@@ -21,10 +21,9 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
-Route::get('/content/{id}/{slug}', [HomeController::class, 'content'])->name('content');
-Route::get('/menucontents/{id}/{slug}', [HomeController::class, 'menucontents'])->name('menucontents');
-Route::post('/getcontent', [HomeController::class, 'getcontent'])->name('getcontent');
-Route::get('/contentlist/{search}', [HomeController::class, 'contentlist'])->name('contentlist');
+Route::get('/service/{id}/{slug}', [HomeController::class, 'service'])->name('service');
+Route::get('/categoryservices/{id}/{slug}', [HomeController::class, 'categoryservices'])->name('categoryservices');
+Route::post('/sendreview/{id}/{slug}', [HomeController::class, 'sendreview'])->name('sendreview');
 
 //admin
 Route::middleware('auth')->prefix('admin')->group(function (){
@@ -65,6 +64,14 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::post('update/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'update'])->name('admin_message_update');
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_delete');
         Route::get('show', [\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_message_show');
+
+    });
+    Route::prefix('review')->group(function (){
+
+        Route::get('/',[\App\Http\Controllers\Admin\ReviewController::class,'index'])->name('admin_review');
+        Route::post('update/{id}',[\App\Http\Controllers\Admin\ReviewController::class,'update'])->name('admin_review_update');
+        Route::get('delete/{id}',[\App\Http\Controllers\Admin\ReviewController::class,'destroy'])->name('admin_review_delete');
+        Route::get('show/{id}',[\App\Http\Controllers\Admin\ReviewController::class,'show'])->name('admin_review_show');
 
     });
 

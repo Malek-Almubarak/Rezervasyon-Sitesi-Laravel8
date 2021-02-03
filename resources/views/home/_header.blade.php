@@ -13,10 +13,10 @@
                             @php
                                 $parentCategories=\App\Http\Controllers\HomeController::categoryList();
                             @endphp
-                            <li class="has-sub"><a href="service-list.html" title="Service List">Services</a>
+                            <li class="has-sub"><a href="#" title="Service List">Services</a>
                                 <ul>
                                     @foreach($parentCategories as $rs)
-                                    <li><a href="service-list.html" title="Service List">{{$rs->title}}</a></li>
+                                    <li><a href="{{route('categoryservices',['id'=>$rs->id,'slug'=>$rs->title])}}" title="Service List">{{$rs->title}}</a></li>
                                     @endforeach
                                 </ul>
 

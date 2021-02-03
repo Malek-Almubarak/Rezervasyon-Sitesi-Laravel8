@@ -7,10 +7,10 @@
                 <div class="footer-widget">
                     <h2 class="widget-title">Salon Address</h2>
                     <ul class="listnone contact">
-                        <li><i class="fa fa-map-marker"></i> 4958 Norman Street Los Angeles, CA 90042 </li>
-                        <li><i class="fa fa-phone"></i> +00 (800) 123-4567</li>
-                        <li><i class="fa fa-fax"></i> +00 (123) 456 7890</li>
-                        <li><i class="fa fa-envelope-o"></i> info@salon.com</li>
+                        <li><i class="fa fa-map-marker"></i>{{$setting->address}}</li>
+                        <li><i class="fa fa-phone"></i> {{$setting->phone}}</li>
+                        <li><i class="fa fa-fax"></i> {{$setting->fax}}</li>
+                        <li><i class="fa fa-envelope-o"></i> {{$setting->email}}</li>
                     </ul>
                 </div>
             </div>
@@ -20,13 +20,12 @@
                     <h2 class="widget-title">Social Feed</h2>
                     <ul class="listnone">
                         <li>
-                            <a href="#"> <i class="fa fa-facebook"></i> Facebook </a>
+                            <a href="#"> <i class="fa fa-facebook"></i> {{$setting->facebook}} </a>
                         </li>
-                        <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i> Google Plus</a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i> Linked In</a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i> {{$setting->twitter}}</a></li>
+
                         <li>
-                            <a href="#"> <i class="fa fa-youtube"></i>Youtube</a>
+                            <a href="#"> <i class="fa fa-youtube"></i>{{$setting->youtube}}</a>
                         </li>
                     </ul>
                 </div>
