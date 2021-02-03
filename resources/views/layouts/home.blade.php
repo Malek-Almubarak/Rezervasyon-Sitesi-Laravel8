@@ -27,20 +27,11 @@
 <body>
 @include('home._header')
 
-    <div class="cta-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="cta-title">hair salon website templates</h1>
-                    <p class="cta-text">You can download and use these FREE HTML templates for your salon and beauty shop and store. </p>
-                    <a href="https://easetemplate.com/downloads/category/free-website-template/" class="btn btn-default" target="_blank">Call to action buttons</a> </div>
-            </div>
-        </div>
 
-</div>
+@section('content')
+    @show
 
 
-@include('home._category')
 @include('home._footer')
 <!-- /.footer-->
 <!-- /.footer-->

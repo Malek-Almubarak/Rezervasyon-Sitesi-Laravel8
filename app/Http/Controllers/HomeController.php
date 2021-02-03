@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Faq;
+use App\Models\Message;
 use App\Models\Service;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -37,7 +39,40 @@ class HomeController extends Controller
         ];
         return view('home.index',$data);
     }
+    public function aboutus(){
+        $setting=Setting::first();
+        return view('home.about',['setting'=>$setting,'page'=>'home']);
+    }
+    public function sendmessage(Request $request)
+    {
+        $data = new Message();
 
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+
+
+        $data->save();
+
+        return redirect()->route('contact')->with('success','Your Message sent successfully!');
+    }
+
+    public function contact(){
+        $setting=Setting::first();
+        return view('home.contact',['setting'=>$setting,'page'=>'home']);
+    }
+
+    public function references(){
+        $setting=Setting::first();
+        return view('home.references',['setting'=>$setting,'page'=>'home']);
+    }
+    public function faq(){
+        $setting=Setting::first();
+        $datalist=Faq::all()->sortBy('position');
+        return view('home.faq',['datalist'=>$datalist,'setting'=>$setting]);
+    }
     public function login()
     {
         return view('admin.login');

@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('admin_message')}}">
                     <i class="material-icons">library_books</i>
                     <p>Contact Messages</p>
                 </a>

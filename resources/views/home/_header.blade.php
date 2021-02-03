@@ -8,7 +8,7 @@
                 <div class="navigation">
                     <div id="navigation">
                         <ul>
-                            <li class="active"><a href="index.html" title="Home">Home</a></li>
+                            <li class="active"><a href="{{route('home')}}" title="Home">Home</a></li>
 
                             @php
                                 $parentCategories=\App\Http\Controllers\HomeController::categoryList();
@@ -21,13 +21,13 @@
                                 </ul>
 
                             </li>
-                            <li><a href="contact.html" title="Contact Us">Contact</a> </li>
-                            <li><a href="appointment.html" title="appointment">About Us</a> </li>
-                            <li><a href="appointment.html" title="appointment">References</a> </li>
+                            <li><a href="{{route('contact')}}" title="Contact Us">Contact</a> </li>
+                            <li><a href="{{route('aboutus')}}" title="appointment">About Us</a> </li>
+                            <li><a href="{{route('references')}}" title="appointment">References</a> </li>
                             @auth
-                            <li class="has-sub"><a href="blog-default.html" title="Blog ">{{Auth::user()->name}}</a>
+                            <li class="has-sub"><a href="#" title="Blog ">{{Auth::user()->name}}</a>
                                 <ul>
-                                    <li><a href="blog-default.html" title="Blog">My Profile</a></li>
+                                    <li><a href="{{route('userprofile')}}" title="Profile">My Profile</a></li>
                                     <li><a href="blog-single.html" title="Blog Single ">Logout</a></li>
                                 </ul>
                             </li>
