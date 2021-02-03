@@ -1,93 +1,72 @@
 @extends('layouts.admin')
 
-@section('title','Category List')
-
+@section('title','Categories')
 
 @section('content')
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title ">Categories</h4>
+                            <p class="card-category"> Categories Table</p>
+                            <a href="{{route('admin_category_add')}}" style="position: absolute; right: 30px;font-style: bold; background-color:#4a5568; border-color: #95999c">Category Add</a><br>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Parent
+                                    </th>
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+                                    <th>
+                                        Edit
+                                    </th>
+                                    <th>
+                                        Delete
+                                    </th>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($datalist as $rs)
+                                    <tr>
+                                        <td>
+                                            {{$rs->id}}
+                                        </td>
+                                        <td>
+                                            {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title) }}
+                                        </td>
+                                        <td>
+                                            {{$rs->title}}
+                                        </td>
+                                        <td>
+                                            {{$rs->status}}
+                                        </td>
+                                        <td>
+                                            <a href="{{route('admin_category_edit',['id'=>$rs->id])}}"><img src="{{asset('assets/admin/images')}}/edit.png" height="30"></a>
+                                        </td>
+                                        <td>
+                                            <a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are you sure?')"><img src="{{asset('assets/admin/images')}}/delete.png" height="30"></a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div style="margin-left: 23%; margin-top: 30px">
-       <section class="content-header">
-           <div class="container-fluid">
-               <div class="row mb-2">
-                   <div class="col-sm-6">
-                       <h3>Categories</h3>
-                   </div>
-                   <div class="col-sm-6">
-                       <ol class="breadcrumb float-sm-right">
-                           <li class="breadcrumb-item"><a href="#">Home</a></li>
-                           <li class="breadcrumb-item active">category</li>
-                       </ol>
-                   </div>
-               </div>
-           </div>
-       </section>
-       <section class="content">
-           <div class="card">
-               <div class="card-header">
-
-                   <a href="{{route('admin_category_add')}}" type="button" class="btn btn-block btn-primary btn-lg" style="width: 150px">Add category</a>
-               </div>
-
-           </div>
-           <div class="panel-body">
-               <table class="table">
-                   <thead>
-                   <tr>
-                       <th>ID</th>
-                       <th>Parent</th>
-                       <th>Title</th>
-                       <th>status</th>
-                       <th>Edit</th>
-                       <th>Delelet</th>
-                   </tr>
-                   </thead>
-                   <tbody>
-                   @foreach($datalist as $rs)
-
-
-                   <tr>
-                       <td>{{$rs->id}}</td>
-                       <td>{{$rs->parented}}</td>
-                       <td>{{$rs->title}}</td>
-                       <td>{{$rs->status}}</td>
-                       <td><a href="{{route('admin_category_edit',['id'=>$rs->id])}}">Edit</a></td>
-                       <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Are you sure?you want to delet this')"> Delet</a></td>
-                   </tr>
-                   </tbody>
-                   @endforeach
-               </table>
-           </div>
-       </section>
+            </div>
+        </div>
     </div>
-
-
-               <div class="card-footer">
-                   footer
-               </div>
-   </div>
-@endsection
-
-@section('footer')
-    <!-- Javascript -->
-
-    <script src="{{ asset('assets/admin/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/scripts/klorofil-common.js') }}"></script>
-
-    <script>
-        $(function (){
-            $("#example").DataTable({
-                "responsive":true,"autoWidth":false,
-            )};
-            $('#example2').DataTable({
-                "paging":true,"lengthChang":false,
-                "searching":false,"ordering":true,
-                "info":true,"autoWidth":false,
-                "responsive":true,
-
-        })
-
-    </script>
-
 @endsection

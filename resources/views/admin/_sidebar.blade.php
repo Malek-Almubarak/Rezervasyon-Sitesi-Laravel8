@@ -1,33 +1,69 @@
-<!-- LEFT SIDEBAR -->
+<div class="sidebar" data-color="purple" data-background-color="black" data-image="{{asset('assets')}}/admin/assets/img/sidebar-2.jpg">
+    <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-<div id="sidebar-nav" class="sidebar">
-    <div class="info">
+      Tip 2: you can also add an image using data-image tag
+  -->
+    <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+            Admin Yönetici Sayfası
+        </a></div>
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class="nav-item active  ">
+                <a class="nav-link" href="{{route('admin_home')}}">
+                    <i class="material-icons">dashboard</i>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{route('admin_category')}}">
+                    <i class="material-icons">person</i>
+                    <p>Categories</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{route('admin_services')}}">
+                    <i class="material-icons">content_paste</i>
+                    <p>Services</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="#">
+                    <i class="material-icons">library_books</i>
+                    <p>Settings</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="#">
+                    <i class="material-icons">library_books</i>
+                    <p>Contact Messages</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="#">
+                    <i class="material-icons">library_books</i>
+                    <p>FAQ</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="#">
+                    <i class="material-icons">library_books</i>
+                    <p>Users</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{route('admin_logout')}}">
+                    <i class="material-icons">bubble_chart</i>
+                    <p>Logout</p>
+                </a>
+            </li>
 
-    </div>
-    <div class="sidebar-scroll">
-
-        <nav>
-            <ul class="nav">
-                <li><a href="{{route('admin_home')}}" class="active"><i class="lnr lnr-home"></i> <span>HOME</span></a></li>
-                <li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
-                <li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
-                <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
-                <li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
-                <li>
-                    <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                    <div id="subPages" class="collapse ">
-                        <ul class="nav">
-                            <li><a href="page-profile.html" class="">Profile</a></li>
-                            <li><a href="page-login.html" class="">Login</a></li>
-                            <li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{route('admin_category')}}" class="active"> <p>CATEGORY</p></a></li>
-                <li><a href="{{route('admin_service')}}" class="active"> <p>Service</p></a></li>
-                <li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
-                <li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>
-            </ul>
-        </nav>
+            <!-- <li class="nav-item active-pro ">
+                  <a class="nav-link" href="./upgrade.html">
+                      <i class="material-icons">unarchive</i>
+                      <p>Upgrade to PRO</p>
+                  </a>
+              </li> -->
+        </ul>
     </div>
 </div>

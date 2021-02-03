@@ -1,79 +1,99 @@
-<!doctype html>
-<html lang="en" class="fullscreen-bg">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Login</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!-- VENDOR CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/admin//css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/linearicons/style.css') }}">
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/main.css') }}">
-    <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/demo.css') }}">
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/{{ asset('assets/admin/css?family=Source+Sans+Pro:300,400,600,700') }}" rel="stylesheet">
-    <!-- ICONS -->
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/img/apple-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/admin/img/favicon.png') }}">
+    <title>Login Sayfası</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{{asset('assets')}}/admin/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/css/util.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/css/main.css">
+    <!--===============================================================================================-->
 </head>
-
 <body>
-<!-- WRAPPER -->
-<div id="wrapper">
-    <div class="vertical-align-wrap">
-        <div class="vertical-align-middle">
-            <div class="auth-box ">
-                <div class="left">
-                    <div class="content">
-                        <div class="header">
-                            <div class="logo text-center"><img src="{{ asset('assets/admin/img/logo-dark.png') }}" alt="Klorofil Logo"></div>
-                            <p class="lead">Login to your account</p>
-                        </div>
-                        <form class="form-auth-small" action="{{route('admin_logincheck') }}" method="post" >
-                           @csrf
-                            <div class="form-group">
-                                <label for="signin-email" class="control-label sr-only">Email</label>
-                                <input type="email" class="form-control" id="email"  name="email" placeholder="Email" required autofocus>
-                            </div>
-                            <div class="form-group">
-                                <label for="signin-password" class="control-label sr-only">Password</label>
-                                <input type="password" class="form-control" id="password"  name="password" placeholder="Password">
-                            </div>
-                            <div class="form-group clearfix">
-                                <label class="fancy-checkbox element-left">
-                                    <input type="checkbox">
-                                    <span>Remember me</span>
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
-                            <div class="bottom">
-                                <span class="helper-text"><i class="fa fa-lock"></i> <a href="#">Forgot password?</a></span>
-                            </div>
 
-                            <div class="col-xs-4">
-                                <button class="btn btn-block bg-pink waves-effect" type="submit"  >SIGN IN</button>
-                            </div>
-                        </form>
-                    </div>
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('{{asset('assets')}}/admin/images/bg-01.jpg');">
+        <div class="wrap-login100">
+            <form action="{{route('admin_logincheck')}}" method="post" class="login100-form validate-form">
+                @csrf
+                <span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+					</span>
+
+                <span class="login100-form-title p-b-34 p-t-27">
+						Log in
+					</span>
+
+                <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <input class="input100" id="email" type="text" name="email" placeholder="email">
+                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
-                <div class="right">
-                    <div class="overlay"></div>
 
-                    <div class="content text">
-                        <h1 class="heading">wellcom</h1>
-                    </div>
-
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <input class="input100" type="password" name="password" placeholder="Password">
+                    <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
-                <div class="clearfix"></div>
-            </div>
+
+                <div class="contact100-form-checkbox">
+                    <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                    <label class="label-checkbox100" for="ckb1">
+                        Remember me
+                    </label>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        Login
+                    </button>
+                </div>
+
+                <div class="text-center p-t-90">
+                    <a class="txt1" href="#">
+                        Forgot Password?
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-<!-- END WRAPPER -->
-</body>
 
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/admin/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/admin/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/admin/vendor/bootstrap/js/popper.js"></script>
+<script src="{{asset('assets')}}/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/admin/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/admin/vendor/daterangepicker/moment.min.js"></script>
+<script src="{{asset('assets')}}/admin/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/admin/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/admin/js/main.js"></script>
+
+</body>
 </html>

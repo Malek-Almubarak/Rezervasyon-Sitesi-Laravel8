@@ -1,103 +1,66 @@
 @extends('layouts.admin')
 
 @section('title','Add Service')
+@section('javascript')
+    @FilemanagerScript
 
-
-@section('content')
-
-    <div style="margin-left: 23%; margin-top: 30px">
-       <section class="content-header">
-           <div class="container-fluid">
-               <div class="row mb-2">
-                   <div class="col-sm-6">
-                       <h3>Add service</h3>
-                   </div>
-                   <div class="col-sm-6">
-                       <ol class="breadcrumb float-sm-right">
-                           <li class="breadcrumb-item"><a href="#">Home</a></li>
-                           <li class="breadcrumb-item active">Add Service</li>
-                       </ol>
-                   </div>
-               </div>
-           </div>
-       </section>
-       <section class="content">
-           <div class="card">
-               <div class="card-header">
-                   <h3 class="card-title">Add Service</h3>
-               </div>
-               <div class="card-body">
-
-                   <div class="card card-primary">
-
-                       <!-- /.card-header -->
-                       <!-- form start -->
-                       <form role="form" action="{{route('admin_service_store')}}" method="post" enctype="multipart/form-data">
-                           @csrf
-                           <div class="card-body" STYLE="width: 600Px">
-                               <div class="form-group">
-                                   <label>Parented</label>
-                                   <select name="category_id" style="width: 100%;">
-
-                                       @foreach($datalist as $rs)
-                                       <option value="{{$rs->id}}" >{{$rs->title}}</option>
-                                       @endforeach
-
-                                   </select>
-                               </div>
-                               <div STYLE="width: 600PX">
-                                   <label >Title</label>
-                                   <input type="text" name="title" class="form-control"  >
-                               </div>
-                               <div STYLE="width: 600PX">
-                                   <label >Keyword</label>
-                                   <input type="text" name="keyword" value="" class="form-control">
-                               </div>
-                               <div STYLE="width: 600PX">
-                                   <label >Description</label>
-                                   <input type="text" name="description" value=""  class="form-control">
-                               </div>
-
-                               <div STYLE="width: 600PX">
-                                   <label>Price</label>
-                                   <input type="number" name="price" value="0" class="form-control">
-                               </div>
-                               <div STYLE="width: 600PX">
-                                   <label >Image</label>
-                                   <input type="file" name="image" class="form-control"  >
-                               </div>
-                               <div>
-                                   <div><label>Detail</label></div>
-
-                                   <textarea  id="details" name="detail" ></textarea>
-
-                               </div>
-                               <div class="form-group" STYLE="width: 100PX">
-                                   <label>Status</label>
-                                   <select name="status" style="width: 100%">
-                                       <option selected="selected">False</option>
-                                       <option>True</option>
-
-                                   </select>
-                               </div>
-
-                           </div>
-                           <!-- /.card-body -->
-
-                   </div>
-               </div>
-
-               <div class="card-footer">
-                   <button type="submit" class="btn btn-primary">ADD service</button>
-               </div>
-
-           </div>
-       </section>
-   </div>
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    <script>
-        CKEDITOR.replace( 'details' );
-    </script>
-
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 @endsection
 
+@section('content')
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title ">Add Service</h4>
+                            <p class="card-category"> Add Service Page</p>
+                        </div>
+                        <div class="card-body">
+                            <div style="width:800px; height: 1400px;">
+                                <form action="{{route('admin_service_store')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <table>
+
+                                        <tr><h4>Category:</h4> <select name="category_id" id="category_id" style="width: 400px">
+                                                <option value="0" selected="selected">Main Category</option>
+                                                @foreach($datalist as $rs)
+                                                    <option value="{{$rs->id}}">{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title) }}</option>
+                                                @endforeach
+
+
+                                            </select></tr>
+                                        <tr><h4>Title:</h4> <input style="width: 400px" id="title" type="text" name="title" placeholder="Title"/></tr>
+                                        <tr><h4>Keywords: </h4><input style="width: 400px" id="keywords" type="text" name="keywords" placeholder="Keywords"/></tr>
+                                        <tr><h4>Description: </h4><input style="width: 400px" id="description" type="text" name="description" placeholder="Description"/></tr>
+                                        <tr><h4>Detail: </h4><textarea id="detail" name="detail"></textarea>
+                                            <script>
+                                                window.onload = function () {
+                                                    CKEDITOR.replace('detail', {
+                                                        filebrowserBrowseUrl: filemanager.ckBrowseUrl,
+                                                    });
+                                                }
+
+                                            </script>
+                                        <tr><h4>Slug: </h4><input style="width: 400px" id="slug" type="text" name="slug" placeholder="Slug"/></tr>
+                                        <tr><h4>Price: </h4><input style="width: 400px" id="price" type="number" name="price" placeholder="Price"/></tr>
+                                        <tr><h4>Image:</h4></label><input type="file" name="image" id="image" class="form-control"></tr>
+                                        <tr><label for="status"><h4><br>Status:</h4></label>
+
+                                            <select name="status" id="status" style="width: 400px">
+                                                <option value="true">True</option>
+                                                <option value="false">False</option>
+
+                                            </select></tr><br><br>
+                                        <tr><button type="submit" style="color:#000000; background-color: #5dff00; width: 150px;">Add Service</button></tr>
+                                    </table>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+@endsection

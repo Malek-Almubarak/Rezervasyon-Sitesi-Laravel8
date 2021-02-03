@@ -1,25 +1,35 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-
-
-      public function index()
+    public static function categoryList()
     {
-       return view('home.index');
+        return Category::where('parent_id','=',0)->with('children')->get();
+    }
+    public static function getsetting()
+    {
+        return Setting::first();
+    }
+
+
+    public function index()
+    {
+        return view('home.index');
 
     }
 
-     public function login()
+    public function login()
     {
         return view('admin.login');
     }
 
-     public function logincheck(Request $request)
+    public function logincheck(Request $request)
     {
 
         if ($request->isMethod('post'))
@@ -38,7 +48,7 @@ class HomeController extends Controller
     }
 
 
-     public function logout(Request $request)
+    public function logout(Request $request)
     {
         Auth::logout();
         $request->session()->invalidate();
@@ -46,16 +56,5 @@ class HomeController extends Controller
         return redirect('/');
     }
 
-     public function test($id,$name)
-    {
-        return view('home.test',['id'=>$id,'name'=>$name]);
-        /*
-        echo "Id Number :",$id;
-        echo "<br>Name :",$name;
-        for ($i=1;$i<=$id;$i++)
-        {
-            echo "<br> $i - $name";
-        }
-        */
-    }
+
 }

@@ -1,89 +1,52 @@
 @extends('layouts.admin')
 
-@section('title','Edit Category')
-
+@section('title','Category Edit')
 
 @section('content')
-        <div style="margin-left: 23%; margin-top: 30px">
-           <section class="content-header">
-               <div class="container-fluid">
-                   <div class="row mb-2">
-                       <div class="col-sm-6">
-                           <h3>edit category</h3>
-                       </div>
-                       <div class="col-sm-6">
-                           <ol class="breadcrumb float-sm-right">
-                               <li class="breadcrumb-item"><a href="#">Home</a></li>
-                               <li class="breadcrumb-item active">Edit categoy</li>
-                           </ol>
-                       </div>
-                   </div>
-               </div>
-           </section>
-           <section class="content">
-               <div class="card">
-                   <div class="card-header">
-                       <h3 class="card-title">Add categoy</h3>
-                   </div>
-                   <div class="card-body">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title ">Category Edit</h4>
+                            <p class="card-category"> Category Edit Page</p>
+                        </div>
+                        <div class="card-body">
+                <div style="width:200px; height: 850px;">
+                    <form action="{{route('admin_category_update',['id'=>$data->id])}}" method="post">
+                        @csrf
+                        <table>
 
-                       <div class="card card-primary">
+                            <tr><h4>Parent Id:</h4> <select name="parent_id" id="parent_id" style="width: 400px">
 
-                           <!-- /.card-header -->
-                           <!-- form start -->
-                           <form role="form" action="{{route('admin_category_update',['id'=>$data->id])}}" method="post">
-                               @csrf
-                               <div class="card-body" STYLE="width: 600Px">
-                                   <div class="form-group">
-                                       <label>Parented</label>
-                                       <select name="parented" style="width: 100%;">
-                                           @foreach($datalist as $rs)
-                              <option value="{{$rs->id}}" @if ($rs->id==$data->parented) selected="selected" @endif>{{$rs->title}}</option>
-                                           @endforeach
-                                       </select>
-                                   </div>
-                                   <div STYLE="width: 600Px">
-                                       <label >Title</label>
-                                       <input type="text" name="title"  value="{{$data->title}}" class="form-control" >
-                                   </div>
+                                    <option value="0">Ana Kategori</option>
+                                    @foreach($datalist as $rs)
+                                        <option value="{{$rs->id}}" @if ($rs->id==$data->parent_id) selected="selected" @endif>{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title) }}</option>
+                                    @endforeach
 
 
-                                   <div STYLE="width: 600Px">
-                                       <label >Keyword</label>
-                                       <input type="text" name="keyword" value="{{$data->keyword}}" class="form-control">
-                                   </div>
-                                   <div STYLE="width: 600Px" >
-                                       <label >Description</label>
-                                       <input type="text" name="description" value="{{$data->description}}" class="form-control">
-                                   </div>
-                                   <div class="form-group">
-                                       <label>Status</label>
-                                       <select name="status"  style="width: 100%;">
-                                           <option selected="selected">{{$data->status}}</option>
-                                           <option >False</option>
-                                           <option>True</option>
+                                </select></tr>
+                            <tr><h4>Title:</h4> <input style="width: 400px" id="title" type="text" value="{{$data->title}}" name="title" placeholder="Title"/></tr>
+                            <tr><h4>Keywords: </h4><input style="width: 400px" id="keywords" type="text" value="{{$data->keywords}}" name="keywords" placeholder="Keywords"/></tr>
+                            <tr><h4>Description: </h4><input style="width: 400px" id="description" type="text" value="{{$data->description}}" name="description" placeholder="Description"/></tr>
+                            <tr><h4>Slug: </h4><input style="width: 400px" id="slug" type="text" value="{{$data->slug}}" name="slug" placeholder="Slug"/></tr>
+                            <tr><label for="status"><h4>Status:</h4></label>
 
-                                       </select>
-                                   </div>
+                                <select name="status" id="status" style="width: 400px">
+                                    <option selected="selected">{{$data->status}}</option>
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
 
-                               </div>
-                               <!-- /.card-body -->
+                                </select></tr><br><br>
+                            <tr><button type="submit" style="color:#95999c; background-color: #4a5568; width: 150px;" onclick="return confirm('Are you sure to keep your changes?')">Update</button></tr>
+                        </table>
+                    </form>
+                </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                       </div>
-                   </div>
-
-                   <div class="card-footer">
-                       <button type="submit" class="btn btn-primary">Update CATEGORY</button>
-                   </div>
-
-               </div>
-           </section>
-       </div>
-
-    @endsection
-    <script>
-        import Button from "@/Jetstream/Button";
-        export default {
-            components: {Button}
-        }
-    </script>
+@endsection

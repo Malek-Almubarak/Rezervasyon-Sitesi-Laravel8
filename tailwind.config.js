@@ -5,7 +5,6 @@ module.exports = {
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
-        './resources/js/**/*.vue',
     ],
 
     theme: {
@@ -17,8 +16,10 @@ module.exports = {
     },
 
     variants: {
-        opacity: ['responsive', 'hover', 'focus', 'disabled'],
+        extend: {
+            opacity: ['disabled'],
+        },
     },
 
-    plugins: [require('@tailwindcss/ui')],
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };

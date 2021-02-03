@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{route('admin_logincheck')}}">
+        <form method="POST" action="{{ route('login') }}">
             @csrf
 
             <div>

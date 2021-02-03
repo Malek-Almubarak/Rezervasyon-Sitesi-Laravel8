@@ -1,134 +1,270 @@
-    <div class="clearfix"></div>
-<footer>
+<footer class="footer">
     <div class="container-fluid">
-        <p class="copyright">&copy; 2017 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
+        <nav class="float-left">
+        </nav>
+        <div class="copyright float-right" id="date">
+            , made with <i class="material-icons">favorite</i> by Malek Almubarak for a better web.
+        </div>
     </div>
 </footer>
-
-<!-- END WRAPPER -->
-<!-- Javascript -->
-<script src="{{ asset('assets/admin/vendor/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/chartist/js/chartist.min.js') }}"></script>
-<script src="{{ asset('assets/admin/scripts/klorofil-common.js') }}"></script>
 <script>
-    $(function() {
-        let data, options;
+    const x = new Date().getFullYear();
+    let date = document.getElementById('date');
+    date.innerHTML = '&copy; ' + x + date.innerHTML;
+</script>
+</div>
+</div>
+<div class="fixed-plugin">
+    <div class="dropdown show-dropdown">
+        <a href="#" data-toggle="dropdown">
+            <i class="fa fa-cog fa-2x"> </i>
+        </a>
+        <ul class="dropdown-menu">
+            <li class="header-title"> Sidebar Filters</li>
+            <li class="adjustments-line">
+                <a href="javascript:void(0)" class="switch-trigger active-color">
+                    <div class="badge-colors ml-auto mr-auto">
+                        <span class="badge filter badge-purple active" data-color="purple"></span>
+                        <span class="badge filter badge-azure" data-color="azure"></span>
+                        <span class="badge filter badge-green" data-color="green"></span>
+                        <span class="badge filter badge-warning" data-color="orange"></span>
+                        <span class="badge filter badge-danger" data-color="danger"></span>
+                    </div>
+                    <div class="clearfix"></div>
+                </a>
+            </li>
+            <li class="header-title">Images</li>
+            <li>
+                <a class="img-holder switch-trigger" href="javascript:void(0)">
+                    <img src="{{asset('assets')}}/admin/assets/img/sidebar-1.jpg" alt="">
+                </a>
+            </li>
+            <li class="active">
+                <a class="img-holder switch-trigger" href="javascript:void(0)">
+                    <img src="{{asset('assets')}}/admin/assets/img/sidebar-2.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a class="img-holder switch-trigger" href="javascript:void(0)">
+                    <img src="{{asset('assets')}}/admin/assets/img/sidebar-3.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a class="img-holder switch-trigger" href="javascript:void(0)">
+                    <img src="{{asset('assets')}}/admin/assets/img/sidebar-4.jpg" alt="">
+                </a>
+            </li>
+            <li class="button-container">
+                <a href="https://www.creative-tim.com/product/material-dashboard-dark" target="_blank" class="btn btn-primary btn-block">Free Download</a>
+            </li>
+            <!-- <li class="header-title">Want more components?</li>
+                <li class="button-container">
+                    <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
+                      Get the pro version
+                    </a>
+                </li> -->
+            <li class="button-container">
+                <a href="https://demos.creative-tim.com/material-dashboard-dark/docs/2.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block">
+                    View Documentation
+                </a>
+            </li>
+            <li class="button-container github-star">
+                <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard/tree/dark-edition" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+            </li>
+            <li class="header-title">Thank you for 95 shares!</li>
+            <li class="button-container text-center">
+                <button id="twitter" class="btn btn-round btn-twitter"><i class="fa fa-twitter"></i> &middot; 45</button>
+                <button id="facebook" class="btn btn-round btn-facebook"><i class="fa fa-facebook-f"></i> &middot; 50</button>
+                <br>
+                <br>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--   Core JS Files   -->
+<script src="{{asset('assets')}}/admin/assets/js/core/jquery.min.js"></script>
+<script src="{{asset('assets')}}/admin/assets/js/core/popper.min.js"></script>
+<script src="{{asset('assets')}}/admin/assets/js/core/bootstrap-material-design.min.js"></script>
+<script src="https://unpkg.com/default-passive-events"></script>
+<script src="{{asset('assets')}}/admin/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chartist JS -->
+<script src="{{asset('assets')}}/admin/assets/js/plugins/chartist.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="{{asset('assets')}}/admin/assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="{{asset('assets')}}/admin/assets/js/material-dashboard.js?v=2.1.0"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="{{asset('assets')}}/admin/assets/demo/demo.js"></script>
+<script>
+    $(document).ready(function() {
+        $().ready(function() {
+            $sidebar = $('.sidebar');
 
-        // headline charts
-        data = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            series: [
-                [23, 29, 24, 40, 25, 24, 35],
-                [14, 25, 18, 34, 29, 38, 44],
-            ]
-        };
+            $sidebar_img_container = $sidebar.find('.sidebar-background');
 
-        options = {
-            height: 300,
-            showArea: true,
-            showLine: false,
-            showPoint: false,
-            fullWidth: true,
-            axisX: {
-                showGrid: false
-            },
-            lineSmooth: false,
-        };
+            $full_page = $('.full-page');
 
-        new Chartist.Line('#headline-chart', data, options);
+            $sidebar_responsive = $('body > .navbar-collapse');
 
+            window_width = $(window).width();
 
-        // visits trend charts
-        data = {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-            series: [{
-                name: 'series-real',
-                data: [200, 380, 350, 320, 410, 450, 570, 400, 555, 620, 750, 900],
-            }, {
-                name: 'series-projection',
-                data: [240, 350, 360, 380, 400, 450, 480, 523, 555, 600, 700, 800],
-            }]
-        };
+            $('.fixed-plugin a').click(function(event) {
+                // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+                if ($(this).hasClass('switch-trigger')) {
+                    if (event.stopPropagation) {
+                        event.stopPropagation();
+                    } else if (window.event) {
+                        window.event.cancelBubble = true;
+                    }
+                }
+            });
 
-        options = {
-            fullWidth: true,
-            lineSmooth: false,
-            height: "270px",
-            low: 0,
-            high: 'auto',
-            series: {
-                'series-projection': {
-                    showArea: true,
-                    showPoint: false,
-                    showLine: false
-                },
-            },
-            axisX: {
-                showGrid: false,
+            $('.fixed-plugin .active-color span').click(function() {
+                $full_page_background = $('.full-page-background');
 
-            },
-            axisY: {
-                showGrid: false,
-                onlyInteger: true,
-                offset: 0,
-            },
-            chartPadding: {
-                left: 20,
-                right: 20
-            }
-        };
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
 
-        new Chartist.Line('#visits-trends-chart', data, options);
+                var new_color = $(this).data('color');
+
+                if ($sidebar.length != 0) {
+                    $sidebar.attr('data-color', new_color);
+                }
+
+                if ($full_page.length != 0) {
+                    $full_page.attr('filter-color', new_color);
+                }
+
+                if ($sidebar_responsive.length != 0) {
+                    $sidebar_responsive.attr('data-color', new_color);
+                }
+            });
+
+            $('.fixed-plugin .background-color .badge').click(function() {
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+
+                var new_color = $(this).data('background-color');
+
+                if ($sidebar.length != 0) {
+                    $sidebar.attr('data-background-color', new_color);
+                }
+            });
+
+            $('.fixed-plugin .img-holder').click(function() {
+                $full_page_background = $('.full-page-background');
+
+                $(this).parent('li').siblings().removeClass('active');
+                $(this).parent('li').addClass('active');
 
 
-        // visits chart
-        data = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            series: [
-                [6384, 6342, 5437, 2764, 3958, 5068, 7654]
-            ]
-        };
+                var new_image = $(this).find("img").attr('src');
 
-        options = {
-            height: 300,
-            axisX: {
-                showGrid: false
-            },
-        };
+                if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                    $sidebar_img_container.fadeOut('fast', function() {
+                        $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                        $sidebar_img_container.fadeIn('fast');
+                    });
+                }
 
-        new Chartist.Bar('#visits-chart', data, options);
+                if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                    var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
+                    $full_page_background.fadeOut('fast', function() {
+                        $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                        $full_page_background.fadeIn('fast');
+                    });
+                }
 
-        // real-time pie chart
-        let sysLoad = $('#system-load').easyPieChart({
-            size: 130,
-            barColor: function (percent) {
-                return "rgb(" + Math.round(200 * percent / 100) + ", " + Math.round(200 * (1.1 - percent / 100)) + ", 0)";
-            },
-            trackColor: 'rgba(245, 245, 245, 0.8)',
-            scaleColor: false,
-            lineWidth: 5,
-            lineCap: "square",
-            animate: 800
+                if ($('.switch-sidebar-image input:checked').length == 0) {
+                    var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                    var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                    $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                    $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                }
+
+                if ($sidebar_responsive.length != 0) {
+                    $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+                }
+            });
+
+            $('.switch-sidebar-image input').change(function() {
+                $full_page_background = $('.full-page-background');
+
+                $input = $(this);
+
+                if ($input.is(':checked')) {
+                    if ($sidebar_img_container.length != 0) {
+                        $sidebar_img_container.fadeIn('fast');
+                        $sidebar.attr('data-image', '#');
+                    }
+
+                    if ($full_page_background.length != 0) {
+                        $full_page_background.fadeIn('fast');
+                        $full_page.attr('data-image', '#');
+                    }
+
+                    background_image = true;
+                } else {
+                    if ($sidebar_img_container.length != 0) {
+                        $sidebar.removeAttr('data-image');
+                        $sidebar_img_container.fadeOut('fast');
+                    }
+
+                    if ($full_page_background.length != 0) {
+                        $full_page.removeAttr('data-image', '#');
+                        $full_page_background.fadeOut('fast');
+                    }
+
+                    background_image = false;
+                }
+            });
+
+            $('.switch-sidebar-mini input').change(function() {
+                $body = $('body');
+
+                $input = $(this);
+
+                if (md.misc.sidebar_mini_active == true) {
+                    $('body').removeClass('sidebar-mini');
+                    md.misc.sidebar_mini_active = false;
+
+                    $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+                } else {
+
+                    $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+                    setTimeout(function() {
+                        $('body').addClass('sidebar-mini');
+
+                        md.misc.sidebar_mini_active = true;
+                    }, 300);
+                }
+
+                // we simulate the window Resize so the charts will get updated in realtime.
+                var simulateWindowResize = setInterval(function() {
+                    window.dispatchEvent(new Event('resize'));
+                }, 180);
+
+                // we stop the simulation of Window Resize after the animations are completed
+                setTimeout(function() {
+                    clearInterval(simulateWindowResize);
+                }, 1000);
+
+            });
         });
-
-        let updateInterval = 3000; // in milliseconds
-
-        setInterval(function() {
-            let randomVal;
-            randomVal = getRandomInt(0, 100);
-
-            sysLoad.data('easyPieChart').update(randomVal);
-            sysLoad.find('.percent').text(randomVal);
-        }, updateInterval);
-
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        // Javascript method's body can be found in assets/js/demos.js
+        md.initDashboardPageCharts();
 
     });
 </script>
-

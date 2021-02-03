@@ -11,7 +11,7 @@ Route::redirect('/anasayfa', '/home')->name('anasayfa');
 Route::get('/', function () {
     return view('home.index');
 });
-
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+']);
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
@@ -31,15 +31,24 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
     #service
     Route::prefix('service')->group(function (){
-    Route::get('/',[App\Http\Controllers\Admin\serviceController::class,'index'])->name('admin_service');
-    Route::get('create', [App\Http\Controllers\Admin\serviceController::class, 'create'])->name('admin_service_add');
-    Route::post('store', [App\Http\Controllers\Admin\serviceController::class, 'store'])->name('admin_service_store');
-    Route::get('edit/{id}', [App\Http\Controllers\Admin\serviceController::class, 'edit'])->name('admin_service_edit');
-    Route::post('update/{id}', [App\Http\Controllers\Admin\serviceController::class, 'update'])->name('admin_service_update');
-    Route::get('delete/{id}', [App\Http\Controllers\Admin\serviceController::class, 'destroy'])->name('admin_service_delete');
-    Route::get('show', [App\Http\Controllers\Admin\serviceController::class, 'show'])->name('admin_service_show');
+        Route::get('/',[App\Http\Controllers\Admin\ServiceController::class,'index'])->name('admin_services');
+        Route::get('create', [App\Http\Controllers\Admin\ServiceController::class, 'create'])->name('admin_service_add');
+        Route::post('store', [App\Http\Controllers\Admin\ServiceController::class, 'store'])->name('admin_service_store');
+        Route::get('edit/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'edit'])->name('admin_service_edit');
+        Route::post('update/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'update'])->name('admin_service_update');
+        Route::get('delete/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'destroy'])->name('admin_service_delete');
+        Route::get('show', [App\Http\Controllers\Admin\ServiceController::class, 'show'])->name('admin_service_show');
 
-});
+    });
+    #image gallery
+    Route::prefix('image')->group(function () {
+
+        Route::get('create/{service_id}', [\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
+        Route::post('store/{service_id}', [\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('admin_image_store');
+        Route::get('delete/{id}/{service_id}', [\App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('admin_image_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
+
+    });
 });
 
 
