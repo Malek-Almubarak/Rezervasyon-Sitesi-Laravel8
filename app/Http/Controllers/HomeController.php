@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Service;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,10 +20,22 @@ class HomeController extends Controller
     }
 
 
-    public function index()
-    {
-        return view('home.index');
+    public function index(){
+        $setting=Setting::first();
+        $slider=service::select('id','title','image','slug','price','category_id')->limit(4)->get();
+        $daily=service::select('id','title','image','slug')->limit(6)->inRandomOrder()->get();
+        $last=service::select('id','title','image','slug','price')->limit(6)->orderByDesc('id')->get();
+        $picked=service::select('id','title','image','slug','price')->limit(6)->inRandomOrder()->get();
+        $data=[
+            'setting'=>$setting,
+            'daily'=>$daily,
+            'last'=>$last,
+            'picked'=>$picked,
+            'slider'=>$slider,
+            'page'=>'home'
 
+        ];
+        return view('home.index',$data);
     }
 
     public function login()

@@ -19,12 +19,12 @@
                             <p class="card-category"> Edit Service Page</p>
                         </div>
                         <div class="card-body">
-                            <div style="width:200px; height: 1500px;">
+                            <div style="width:800px; height: 1500px;">
                                 <form action="{{route('admin_service_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <table>
 
-                                        <tr><h4>Category:</h4> <select name="category_id" id="category_id" style="width: 600px">
+                                        <tr><h4>Category:</h4> <select name="category_id" id="category_id" style="width: 400px">
                                                 <option value="0" selected="selected">Main Category</option>
                                                 @foreach($datalist as $rs)
                                                     <option value="{{$rs->id}}" @if ($rs->id==$data->Category_id) selected="selected" @endif>{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title) }}</option>
@@ -32,9 +32,9 @@
 
 
                                             </select></tr>
-                                        <tr><h4>Title:</h4> <input style="width: 600px" id="title" value="{{$data->title}}" type="text" name="title" placeholder="Title"/></tr>
-                                        <tr><h4>Keywords: </h4><input style="width: 600px" id="keywords" value="{{$data->keywords}}" type="text" name="keywords" placeholder="Keywords"/></tr>
-                                        <tr><h4>Description: </h4><input style="width: 600px" id="description" value="{{$data->description}}" type="text" name="description" placeholder="Description"/></tr>
+                                        <tr><h4>Title:</h4> <input style="width: 400px" id="title" value="{{$data->title}}" type="text" name="title" placeholder="Title"/></tr>
+                                        <tr><h4>Keywords: </h4><input style="width: 400px" id="keywords" value="{{$data->keywords}}" type="text" name="keywords" placeholder="Keywords"/></tr>
+                                        <tr><h4>Description: </h4><input style="width: 400px" id="description" value="{{$data->description}}" type="text" name="description" placeholder="Description"/></tr>
                                         <tr><h4>Detail: </h4><textarea id="detail" name="detail"></textarea>{{$data->detail}}</tr>
                                         <script>
                                             window.onload = function () {
@@ -44,16 +44,16 @@
                                             }
 
                                         </script>
-                                        <tr><h4>Slug: </h4><input style="width: 600px" id="slug" value="{{$data->slug}}" type="text" name="slug" placeholder="Slug"/></tr><br>
+                                        <tr><h4>Slug: </h4><input style="width: 400px" id="slug" value="{{$data->slug}}" type="text" name="slug" placeholder="Slug"/></tr><br>
                                         <tr><label for="image"><h4>Image:</h4></label><input type="file" name="image" id="image" value="{{$data->image}}" class="form-control">
                                             <br>
                                             @if($data->image)
                                                 <img src="{{Storage::url($data->image)}}" height="100" alt=""/>
                                             @endif <br>
-                                        <tr><h4>Price: </h4><input style="width: 600px" id="price" value="{{$data->price}}" type="number" name="price" placeholder="Price"/></tr>
-                                        <tr><label for="status"><h4>Status:</h4></label>
+                                        <tr><h4>Price: </h4><input style="width: 400px" id="price" value="{{$data->price}}" type="number" name="price" placeholder="Price"/></tr>
+                                        <tr><label for="status"><br><h4>Status:</h4></label>
 
-                                            <select name="status" id="status" style="width: 600px">
+                                            <select name="status" id="status" style="width: 400px">
                                                 <option selected="selected">{{$data->status}}</option>
                                                 <option value="true">True</option>
                                                 <option value="false">False</option>

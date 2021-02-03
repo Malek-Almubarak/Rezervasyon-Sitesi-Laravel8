@@ -6,7 +6,7 @@
         <link rel="icon" type="image/png" href="{{asset('assets')}}/admin/assets/img/favicon.png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>
-            @yield('title')
+            Image Gallery
         </title>
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
         <!--     Fonts and icons     -->
@@ -31,7 +31,7 @@
                 <div class="card-body">
 
                     <div style="width:200px; height: 600px;">
-                        <form action="{{route('admin_image_store',['car_id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('admin_image_store',['service_id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <table>
 
@@ -39,7 +39,7 @@
 
                                 <tr><label for="image"><h4>Image:</h4></label><input type="file" name="image" id="image" class="form-control">
                                     <br><br>
-                                <tr><button type="submit" style="color:#95999c; background-color: #4a5568; width: 150px;">Ekle</button></tr>
+                                <tr><button type="submit" style="color:#95999c; background-color: #4a5568; width: 150px;">Add</button></tr>
                             </table>
                         </form>
                         <br><br>
@@ -68,7 +68,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{route('admin_image_delete',['id'=>$rs->id,'car_id'=>$data->id])}}" onclick="return confirm('Delete ! Are you sure?')"><img src="{{asset('assets/admin/images')}}/delete.png" height="30"></a>
+                                        <a href="{{route('admin_image_delete',['id'=>$rs->id,'service_id'=>$data->id])}}" onclick="return confirm('Delete ! Are you sure?')"><img src="{{asset('assets/admin/images')}}/delete.png" height="30"></a>
                                     </td>
                                 </tr>
                             @endforeach
