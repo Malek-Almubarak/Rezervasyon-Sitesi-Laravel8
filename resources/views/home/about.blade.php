@@ -37,7 +37,7 @@
                         <h2 class="page-title">About Us</h2>
                         <div class="page-breadcrumb">
                             <ol class="breadcrumb">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="{{route('home')}}">Home</a></li>
                                 <li class="active">About Us</li>
                             </ol>
                         </div>

@@ -24,11 +24,12 @@
                             <li><a href="{{route('contact')}}" title="Contact Us">Contact</a> </li>
                             <li><a href="{{route('aboutus')}}" title="appointment">About Us</a> </li>
                             <li><a href="{{route('references')}}" title="appointment">References</a> </li>
+
                             @auth
                             <li class="has-sub"><a href="#" title="Blog ">{{Auth::user()->name}}</a>
                                 <ul>
                                     <li><a href="{{route('userprofile')}}" title="Profile">My Profile</a></li>
-                                    <li><a href="blog-single.html" title="Blog Single ">Logout</a></li>
+                                    <li><a href="{{route('logout')}}" title="Blog Single ">Logout</a></li>
                                 </ul>
                             </li>
                             @else

@@ -1,32 +1,6 @@
 @extends('layouts.home')
 
 @section('title', 'Contact Us'.$setting->title)
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        .vertical-menu {
-            width: 200px;
-        }
-
-        .vertical-menu a {
-            background-color: #4c5c6c;
-            color: white;
-            display: block;
-            padding: 12px;
-            text-decoration: none;
-        }
-
-        .vertical-menu a:hover {
-            background-color: #4D4D4D;
-        }
-
-        .vertical-menu a.active {
-            background-color: #4ffa0e;
-            color: white;
-        }
-    </style>
-</head>
-
 
 @section('content')
     <div class="page-header">
@@ -37,7 +11,7 @@
                         <h2 class="page-title">Contact Us</h2>
                         <div class="page-breadcrumb">
                             <ol class="breadcrumb">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="{{route('home')}}">Home</a></li>
                                 <li class="active">Contact Us</li>
                             </ol>
                         </div>

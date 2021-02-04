@@ -13,7 +13,7 @@ $setting=\App\Http\Controllers\HomeController::getsetting();
                 <div class="col-md-12">
                     <h1 class="cta-title">hair salon website</h1>
                     <p class="cta-text">You can see everything about for your salon and beauty shop and store. </p>
-                    <a href="https://easetemplate.com/downloads/category/free-website-template/" class="btn btn-default" target="_blank">See Our Services</a> </div>
+                    <a href="{{route('allservicelist')}}" class="btn btn-default" target="_blank">See Our Services</a> </div>
             </div>
         </div>
 
@@ -51,7 +51,7 @@ $setting=\App\Http\Controllers\HomeController::getsetting();
                 </div>
                 @endforeach
 
-                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 text-center"> <a href="#" class="btn btn-default"> View All Service </a> </div>
+                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 text-center"> <a href="{{route('allservicelist')}}" class="btn btn-default"> View All Service </a> </div>
             </div>
         </div>
     </div>

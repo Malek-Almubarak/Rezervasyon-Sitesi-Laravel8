@@ -16,5 +16,14 @@ class Service extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+    public function reservation()
+    {
+        return $this->hasMany(Reservation::class);
+    }
+
 
 }

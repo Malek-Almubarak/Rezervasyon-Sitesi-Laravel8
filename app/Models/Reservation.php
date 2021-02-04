@@ -5,15 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Review extends Model
+class Reservation extends Model
 {
     use HasFactory;
+
     protected $fillable=[
         'service_id',
         'user_id',
         'IP',
-        'subject',
-        'review',
+        'month',
+        'year',
+        'day',
+        'hour',
+        'minute',
     ];
 
     public function service(){

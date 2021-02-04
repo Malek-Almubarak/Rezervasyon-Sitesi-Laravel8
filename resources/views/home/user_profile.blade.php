@@ -61,10 +61,15 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="vertical-menu">
                         <a href="#" class="active">{{Auth::user()->name}}</a>
-                        <a href="{{route('userprofile')}}">MY PROFILE</a>
-                        <a href="#">YORUMLARIM</a>
-                        <a href="#">NOTLARIM</a>
-                        <a href="{{route('admin_home')}}" target="_blank">ADMIN PANEL</a>
+                        <a href="{{route('userprofile')}}">My PROFILE</a>
+                        <a href="{{route('user_review')}}">MY REVIEWS</a>
+                        <a href="{{route('user_reservations')}}">MY RESERVATIONS</a>
+                        @php
+                            $userRoles=Auth::User()->roles->pluck('name');
+                        @endphp
+                        @if($userRoles->contains('admin'))
+                            <li><a href="{{route('admin_home')}}" target="_blank">ADMIN PANEL</a></li>
+                        @endif
                         <a href="{{route('logout')}}">LOGOUT</a>
                     </div>
                 </div>

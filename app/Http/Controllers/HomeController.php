@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Image;
 use App\Models\Message;
+use App\Models\Reservation;
+use App\Models\Review;
 use App\Models\Service;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -68,9 +70,9 @@ class HomeController extends Controller
         $setting=Setting::first();
         $data=service::find($id);
         $picked=service::select('id','title','image','slug')->limit(6)->inRandomOrder()->get();
-        //$reviews=Review::where('service_id',$id)->get();
+        $reviews=Review::where('service_id',$id)->get();
         $datalist=Image::where('service_id',$id)->get();
-        return view('home.service_detail',['setting'=>$setting,'picked'=>$picked,'data'=>$data,'datalist'=>$datalist]);
+        return view('home.service_detail',['setting'=>$setting,'picked'=>$picked,'data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
 
     }
     public function categoryservices($id,$slug){
@@ -81,7 +83,51 @@ class HomeController extends Controller
         return view('home.category_services',['data'=>$data,'datalist'=>$datalist,'setting'=>$setting]);
 
     }
+    public function sendreview(Request $request,$id)
+    {
+        $data = new Review;
 
+        $data->user_id = Auth::id();
+        $service = service::find($id);
+        $data->service_id=$id;
+        $data->subject = $request->input('subject');
+        $data->review = $request->input('review');
+        $data->IP = $_SERVER['REMOTE_ADDR'];
+
+
+
+        $data->save();
+
+        return redirect()->route('service',['id'=>$service->id,'slug'=>$service->slug])->with('success','Mesajınız kaydedilmiştir');
+    }
+    public function makereservation(Request $request,$id)
+    {
+        $data = new Reservation;
+
+        $data->user_id = Auth::id();
+        $data->service_id=$id;
+        $data->year = $request->input('year');
+        $data->month = $request->input('month');
+        $data->day = $request->input('day');
+        $data->hour = $request->input('hour');
+        $data->minute = $request->input('minute');
+        $data->IP = $_SERVER['REMOTE_ADDR'];
+
+
+
+        $data->save();
+
+        return redirect()->route('user_reservations')->with('success','Your Reservation Has been accepted');
+    }
+
+    public function allservicelist(){
+        $datalist=service::all();
+        $setting=Setting::first();
+
+
+        return view('home.allservices',['datalist'=>$datalist,'setting'=>$setting]);
+
+    }
     public function references(){
         $setting=Setting::first();
         return view('home.references',['setting'=>$setting,'page'=>'home']);

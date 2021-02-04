@@ -7,7 +7,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -131,6 +131,7 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/haruncpi/laravel-simple-filemanager" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1nyERfaB5WvxvBj2Z2dF1Xhmr8G" />
@@ -143,12 +144,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Laravel4j" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\php\Laravel2j\resources\views\admin" />
+      <recent name="C:\php\Laravel2j\resources\views\home" />
       <recent name="C:\php\Laravel2j\resources\views" />
     </key>
   </component>
@@ -168,7 +170,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612353924492</updated>
-      <workItem from="1612353930600" duration="5904000" />
+      <workItem from="1612353930600" duration="38017000" />
+      <workItem from="1612427931093" duration="617000" />
     </task>
     <servers />
   </component>
@@ -180,14 +183,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1612356946534" />
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612363808965">
+    <state x="364" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1612382312640">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1612363808965" />
-    <state x="518" y="286" key="NewPhpFileDialog" timestamp="1612357102603">
+    <state x="364" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1612382312640" />
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612395257407">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="518" y="286" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1612357102603" />
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1612395257407" />
+    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1612428122686">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1612428122686" />
+    <state x="514" y="85" key="NewPhpClassDialog" timestamp="1612382249121">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="514" y="85" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1612382249121" />
+    <state x="518" y="286" key="NewPhpFileDialog" timestamp="1612395304262">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="518" y="286" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1612395304262" />
+    <state x="549" y="239" width="316" height="249" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1612382694893">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="549" y="239" width="316" height="249" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.728@0.0.1366.728" timestamp="1612382694893" />
     <state x="479" y="183" width="407" height="358" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1612356963464">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

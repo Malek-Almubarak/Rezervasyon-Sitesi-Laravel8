@@ -30,7 +30,7 @@
             top: 40%;
             width: auto;
             padding: 16px;
-            margin-top: -50px;
+            margin-top: -75px;
             color: white;
             font-weight: bold;
             font-size: 20px;
@@ -178,6 +178,60 @@
                     </script>
 
                     <p class="lead">{!! $data->detail !!}</p>
+                    <div class="comments-area">
+                        <ul class="comment-list">
+                            @foreach($reviews as $rs)
+                            <li class="comment">
+                                <div class="comment-body">
+                                    <div class="comment-author"><img src="{{asset('assets')}}/images/user-pic-1.jpg" alt="" class="img-circle"> </div>
+                                    <div class="comment-info">
+                                        <div class="comment-header">
+                                            <div class="comment-meta"><span class="comment-meta-date pull-right">{{$rs->created_at}}</span></div>
+                                            <h4 class="user-title">{{$rs->user->name}}</h4>
+                                        </div>
+                                        <div class="comment-content">
+                                            <p>{{$rs->review}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="leave-comments">
+                        @include('home.message')
+                        <h2 class="reply-title">Leave a Review</h2>
+                        <form class="reply-form" action="{{route('sendreview',['id'=>$data->id,'slug'=>$data->slug])}}" method="post">
+                            @csrf
+                            <div class="row">
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label class="control-label" for="review">Reviews</label>
+                                        <textarea class="form-control" id="review" name="review" rows="6"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="control-label" for="subject">Subject</label>
+                                        <span class="required">*</span>
+                                        <input id="subject" name="subject" type="text" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+
+                                <!-- Text input-->
+
+                                <div class="col-md-12">
+                                    <!-- Button -->
+                                    <div class="form-group">
+                                        <button id="singlebutton" name="singlebutton" class="btn btn-default">Leave A Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="sidenav">
@@ -185,9 +239,25 @@
                         <h1>{{$data->price}}₺</h1>
                     </div>
                     <div class="widget widget-call-to-action">
-                        <h1 class="widget-title">Book Your Appointment</h1>
+                        <h1 class="widget-title">Book Reservation</h1>
                         <p class="text-white">Call to action widget for booking appointment online.</p>
-                        <a href="#" class="btn btn-primary btn-lg">Make Appointment</a>
+                        <form action="{{route('makereservation',['id'=>$data->id])}}" method="post">
+                            @csrf
+                            <table>
+                                <tr><h2>INFORMATION: </h2><br><br>
+                                <tr> <input style="width: 300px" id="name" type="text" value="{{Auth::user()->name}}" name="name" placeholder="Name"/></tr>
+                                <tr> <input style="width: 300px" id="email" type="email" value="{{Auth::user()->email}}" name="email" placeholder="Email"/></tr>
+                                <tr><input style="width: 300px" id="address" type="text" value="{{Auth::user()->address}}" name="address" placeholder="Address"/></tr>
+                                <tr><input style="width: 300px" id="phone" type="text" value="{{Auth::user()->phone}}" name="phone" placeholder="Phone"/></tr>
+                                <tr><input style="width: 75px" id="year" type="number" name="year" placeholder="Year"/>
+                                    <input style="width: 75px" id="month" type="number" name="month" placeholder="Month"/>
+                                    <input style="width: 75px" id="day" type="number" name="day" placeholder="Day"/><br>
+                                </tr>
+                                <tr><input style="width: 75px" id="hour" type="number" name="hour" placeholder="Hour"/>
+                                <input style="width: 75px" id="minute" type="number" name="minute" placeholder="Minute"/></tr><br>
+                            </table>
+                        <button type="submit" class="btn btn-primary btn-lg">Book Reservation</button>
+                        </form>
                     </div>
                 </div>
             </div>

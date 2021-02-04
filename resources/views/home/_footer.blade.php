@@ -1,4 +1,9 @@
 <!-- footer-->
+@php
+
+    $setting=App\Http\Controllers\HomeController::getsetting();
+
+@endphp
 <div class="container">
     <div class="footer-block">
         <!-- footer block -->
@@ -34,14 +39,9 @@
             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                 <div class="footer-widget widget-newsletter">
                     <!-- newsletter block -->
-                    <h2 class="widget-title">Newsletters</h2>
-                    <p>Enter your email address to receive new patient information and other useful information right to your inbox.</p>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Email Address">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Subscribe</button>
-                            </span>
-                    </div>
+                    <h2 class="widget-title">FAQ</h2>
+                    <a href="{{route('faq')}}">FAQ</a>
+
                     <!-- /input-group -->
                 </div>
                 <!-- newsletter block -->
